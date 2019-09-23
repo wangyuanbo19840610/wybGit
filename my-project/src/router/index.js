@@ -28,8 +28,24 @@ export default new Router({
     name: 'TestUtil',
     component: TestUtil
     },
-    { path: '/bar',
-      name: 'Bar',
+    { path: '/1',
+      name: '1',
+      component: Bar
+    },
+    { path: '/2',
+      name: '2',
+      component: Bar
+    },
+    { path: '/3',
+      name: '3',
+      component: Bar
+    },
+    { path: '/4',
+      name: '4',
+      component: Bar
+    },
+    { path: '/5',
+      name: '5',
       component: Bar
     }
   ]
