@@ -10,7 +10,7 @@ export default{
   methods:{
     save:function(){
       return new Promise((resolve, reject) => {
-        axios.get('api')
+        axios.get('/api/test005')
             .then(response => {
                 resolve(response);
             }, err => {
