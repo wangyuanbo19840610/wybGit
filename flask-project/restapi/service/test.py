@@ -17,13 +17,19 @@ class TestRedisWrite(Resource):
     测试redis
     """
     def get(self):
-        Redis.write("test_key", "test_value", 60)
-        return "ok"
+        Redis.write("test_key2222", "test_value")
+        return "ok2222"
 
 
 class TestRedisRead(Resource):
     def get(self):
-        data = Redis.read("test_key")
+        Redis.write("test_key11111", "test_value_1019")
+        return "ok1111"
+
+
+class TestRedisReadOne(Resource):
+    def get(self):
+        data = Redis.read("test_key3333")
         return data
 
 
