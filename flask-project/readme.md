@@ -7,3 +7,7 @@
 (a)Redis和Hbase互补取值思路:
 用户取数据首先从Redis中取，Redis中没有数据则将Hbase中的数据插入Redis,且在配置文件中设置redis开关redisSwitch，如果redisSwitch=true则是从Redis中取数据，否则直接从Hbase中取数据，
 在配置文件中设置Redis的域的有效时间effectiveTime=86400，86400s为24小时，若设置为0s则直接失效。
+git 远程仓库地址：
+https://github.com/wangyuanbo19840610/wybGit.git
+用户名：wangyuanbo19840610
+密码：8486204Zte!
