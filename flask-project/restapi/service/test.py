@@ -1,15 +1,19 @@
 from flask_restful import Resource
 from util.util import Redis
+from interface.base_info import BaseInfo
 
 
 class HelloWorld(Resource):
     def get(self):
-        return "HelloWorld"
+        info = BaseInfo.get_info()
+        return info
 
 
 class Test20191018(Resource):
     def get(self):
-        return "Test20191018"
+        info = BaseInfo(name="Terry")
+        data = info.get_base_info()
+        return data
 
 
 class TestRedisWrite(Resource):
