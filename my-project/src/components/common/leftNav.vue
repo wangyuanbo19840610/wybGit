@@ -5,9 +5,9 @@
      background-color="#545c64" text-color="#fff" router active-text-color="#ffd04b" @select="handleSelect">
       <draggable>
         <el-submenu>
-          <template slot="title">
+            <template slot="title">
               <i class="el-icon-location"></i>
-              <span>导航一</span>
+              <span>菜单一</span>
             </template>
             <template v-for="(item,value) in MenuArray">
               <el-menu-item :index="item.path">
