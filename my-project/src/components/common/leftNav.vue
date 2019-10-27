@@ -1,24 +1,22 @@
 <template>
   <div>
   <el-col :span="4" style="height:100%">
-    <el-menu :default-active="activeIndex" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" 
+    <el-menu :collapse = "collapse" :default-active="activeIndex" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" 
      background-color="#545c64" text-color="#fff" router active-text-color="#ffd04b" @select="handleSelect">
-      <el-menu-item index="1">
-        <i class="el-icon-location"></i>
-        <span slot="title">导航一</span>
-      </el-menu-item>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
+      <draggable>
+        <el-submenu>
+          <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>导航一</span>
+            </template>
+            <template v-for="(item,value) in MenuArray">
+              <el-menu-item :index="item.path">
+                  <i class="item.icon"></i>
+                  <span slot="title">{{item.name}}</span> 
+              </el-menu-item>            
+            </template>
+        </el-submenu>    
+      </draggable>
       <div class="bottomBtn">
         <el-collapse v-model="activeName" accordion>
           <el-collapse-item title="一致性" name="1">
@@ -41,14 +39,18 @@
 </template>  
 <script>
 import common from './common'
+import draggable from 'vuedraggable'
 export default{
   components: {
-    'common':common
+    common,
+    draggable
   },
   data(){
     return{
       activeIndex:'2',
-      activeName:''
+      activeName:'',
+      collapse:true,
+      MenuArray:[{icon:"el-icon-document",path:"1111",name:"导航一"},{icon:"el-icon-setting",path:"2222",name:"导航二"}]
     }
   },
   mounted() {
