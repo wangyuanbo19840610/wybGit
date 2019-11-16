@@ -11,12 +11,10 @@
               <i class="el-icon-location"></i>
               <span slot="title">aaaaa</span>
             </template>
-            <draggable v-mode="MenuArray" :options="{filter:'.aaaa'}">
-              <el-menu-item v-for="(item,value) in MenuArray" :key="item.name" :index="item.path">
-                  <i class="item.icon"></i>
-                  <span slot="title">{{item.name}}</span> 
-              </el-menu-item>            
-            </draggable>
+            <el-menu-item v-for="(item,value) in MenuArray" :key="item.name" :index="item.path">
+                <i class="item.icon"></i>
+                <span slot="title">{{item.name}}</span> 
+            </el-menu-item>            
         </el-submenu>
       </el-menu>
     </el-col>
@@ -50,25 +48,12 @@ export default{
       // ]
     }
   },
-  mounted() {//el-menu-item
+  mounted() {
     $("li.el-menu-item:first-child").addClass('aaaa');
-    console.log("4444444",this.$route.name)
-    //this.$refs.header.on_alert()
-    this.getChildData();
     this.activeIndex = this.$route.name
   },
-  // watch: {
-  //   $route() {
-  //       this.handleSelect('2')
-  //   }
-  // },
   methods: {
     init(){
-      this.getChildData()
-    },
-    getChildData(){
-        console.log("left get common info",this.$refs.header.item[0].age)
-        //this.$refs.header.name;
     },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
