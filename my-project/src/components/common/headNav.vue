@@ -1,24 +1,28 @@
 <template>
-  <el-header style="text-align: right; font-size: 12px">
-    <el-dropdown>
-      <i class="el-icon-setting" style="margin-right: 15px"></i>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>查看</el-dropdown-item>
-        <el-dropdown-item>新增</el-dropdown-item>
-        <el-dropdown-item>删除</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-  <el-dropdown @command = 'changeLanguage'>
-    <el-button type="primary">
-      {{ language }}<i class="el-icon-arrow-down el-icon--right"></i>
-    </el-button>
-    <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item command = 'en'>English</el-dropdown-item>
-      <el-dropdown-item command = 'cn'>中文</el-dropdown-item>
-    </el-dropdown-menu>
-  </el-dropdown>
-    <span>{{ $t('text.name') }}</span>
-  </el-header>
+  <div>
+    <el-col :span="24">
+    <el-header style="text-align: right; font-size: 12px">
+      <el-dropdown>
+        <i class="el-icon-setting" style="margin-right: 15px"></i>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>查看</el-dropdown-item>
+          <el-dropdown-item>新增</el-dropdown-item>
+          <el-dropdown-item>删除</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <el-dropdown @command = 'changeLanguage'>
+        <el-button type="primary">
+          {{ language }}<i class="el-icon-arrow-down el-icon--right"></i>
+        </el-button>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item command = 'en'>English</el-dropdown-item>
+          <el-dropdown-item command = 'cn'>中文</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <span>{{ $t('text.name') }}</span>
+    </el-header>
+      </el-col>
+  </div>
 </template>
 <script>
 export default{
@@ -63,7 +67,8 @@ export default{
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
-    line-height: 60px;
+    line-height: 50px !important;
+    height:50px !important;
   }
   .el-row {
     margin-bottom: 20px;

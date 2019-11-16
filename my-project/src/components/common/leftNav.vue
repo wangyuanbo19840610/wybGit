@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <el-col :span="4" style="height:100%" class="wangyuanbo">
+  <div style="height:100%;position:absolute;top:0px;background:#000">
+    <el-col :span="4"  class="wangyuanbo">
       <el-menu :collapse = "collapse" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" 
       background-color="#545c64" text-color="#fff" router active-text-color="#ffd04b" @select="handleSelect">
         <div class="menuheader" @click="menuheaderClick">
@@ -72,6 +72,7 @@ export default{
     },
     menuheaderClick(){
       this.collapse = !this.collapse;
+      console.log("aaa",this.collapse)
     }
   }
 }
@@ -81,17 +82,15 @@ export default{
   position:absolute;
   bottom:5px;
 }
-.el-menu{
-  height:100%;
-  position:absolute;
-}
+
 .menuheader{
   text-align:center;
   height:50px;
   line-height:50px;
+  background:#545c64;
+  border-bottom: #000 1px solid
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  min-height: 400px;
 }
 </style>
