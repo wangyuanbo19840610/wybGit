@@ -32,8 +32,12 @@ export default{
     return{
       activeIndex:'2',
       activeName:'',
-      collapse:true,
-      MenuArray:[{icon:"el-icon-document",path:"1111",name:"拼音"},{icon:"el-icon-setting",path:"2222",name:"算术"}]
+      collapse:false,
+      MenuArray:[
+        {icon:"el-icon-document",path:"0000",name:"地图"},
+        {icon:"el-icon-document",path:"1111",name:"拼音"},
+        {icon:"el-icon-setting",path:"2222",name:"算术"}
+      ]
       // MenuArray = [
       //   {
       //     icon:"el-icon-document",
@@ -98,5 +102,11 @@ export default{
 }
 .el-menu-item.is-active{
   background:gray !important;
+}
+.el-submenu.is-active .el-submenu__title{
+  border-bottom:1px solid #000 !important;  
+}
+.el-submenu .el-submenu__title{
+  border-bottom:1px solid #000 !important;  
 }
 </style>
