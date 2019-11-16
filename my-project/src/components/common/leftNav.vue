@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100%;position:absolute;top:0px;background:#000">
+  <div class="left-nav">
     <el-col :span="4"  class="wangyuanbo">
       <el-menu :collapse = "collapse" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" 
       background-color="#545c64" text-color="#fff" router active-text-color="#ffd04b" @select="handleSelect">
@@ -81,32 +81,33 @@ export default{
   }
 }
 </script>
-<style>
-.bottomBtn{
+<style lang="less">
+.left-nav{
+  height:100%;
   position:absolute;
-  bottom:5px;
-}
-
-.menuheader{
-  text-align:center;
-  height:50px;
-  line-height:50px;
-  background:#545c64;
-  border-bottom: #000 1px solid
-}
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-}
-.el-submenu .el-menu-item{
-  border-bottom:1px solid #000 !important;
-}
-.el-menu-item.is-active{
-  background:gray !important;
-}
-.el-submenu.is-active .el-submenu__title{
-  border-bottom:1px solid #000 !important;  
-}
-.el-submenu .el-submenu__title{
-  border-bottom:1px solid #000 !important;  
+  top:0px;
+  background:#000;
+  .menuheader{
+    text-align:center;
+    height:50px;
+    line-height:50px;
+    background:#545c64;
+    border-bottom: #000 1px solid
+  }
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+  }
+  .el-submenu .el-menu-item{
+    border-bottom:1px solid #000 !important;
+  }
+  .el-menu-item.is-active{
+    background:gray !important;
+  }
+  .el-submenu.is-active .el-submenu__title{
+    border-bottom:1px solid #000 !important;  
+  }
+  .el-submenu .el-submenu__title{
+    border-bottom:1px solid #000 !important;  
+  }
 }
 </style>
