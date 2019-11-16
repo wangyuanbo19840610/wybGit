@@ -9,7 +9,7 @@
         <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-location"></i>
-              <span slot="title">aaaaa</span>
+              <span slot="title">王翔宇</span>
             </template>
             <el-menu-item v-for="(item,value) in MenuArray" :key="item.name" :index="item.path">
                 <i class="item.icon"></i>
@@ -33,7 +33,7 @@ export default{
       activeIndex:'2',
       activeName:'',
       collapse:true,
-      MenuArray:[{icon:"el-icon-document",path:"1111",name:"导航一"},{icon:"el-icon-setting",path:"2222",name:"导航二"}]
+      MenuArray:[{icon:"el-icon-document",path:"1111",name:"拼音"},{icon:"el-icon-setting",path:"2222",name:"算术"}]
       // MenuArray = [
       //   {
       //     icon:"el-icon-document",
@@ -92,5 +92,11 @@ export default{
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
+}
+.el-submenu .el-menu-item{
+  border-bottom:1px solid #000 !important;
+}
+.el-menu-item.is-active{
+  background:gray !important;
 }
 </style>
