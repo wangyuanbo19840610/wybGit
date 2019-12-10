@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <el-row type="flex">
     <el-col :span="24">
     <el-header style="text-align: right; font-size: 12px">
       <el-dropdown>
@@ -22,7 +22,7 @@
       <span>{{ $t('text.name') }}</span>
     </el-header>
       </el-col>
-  </div>
+  </el-row>
 </template>
 <script>
 export default{
@@ -69,12 +69,6 @@ export default{
     text-align: center;
     line-height: 50px !important;
     height:50px !important;
-  }
-  .el-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
   .el-col {
     border-radius: 4px;

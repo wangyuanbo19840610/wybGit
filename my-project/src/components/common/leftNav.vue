@@ -1,6 +1,6 @@
 <template>
   <div class="left-nav">
-    <el-col :span="4"  class="wangyuanbo">
+    <el-col class="wangyuanbo">
       <el-menu :collapse = "collapse" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" 
       background-color="#545c64" text-color="#fff" router active-text-color="#ffd04b" @select="handleSelect">
         <div class="menuheader" @click="menuheaderClick">
@@ -34,7 +34,7 @@ export default{
       activeName:'',
       collapse:false,
       MenuArray:[
-        {icon:"el-icon-document",path:"0000",name:"地图"},
+        {icon:"el-icon-document",path:"mainpage",name:"地图"},
         {icon:"el-icon-document",path:"1111",name:"拼音"},
         {icon:"el-icon-setting",path:"2222",name:"算术"}
       ]
@@ -84,8 +84,8 @@ export default{
 <style lang="less">
 .left-nav{
   height:100%;
-  position:absolute;
-  top:0px;
+  position:relative;
+  float:left;
   background:#000;
   .menuheader{
     text-align:center;
