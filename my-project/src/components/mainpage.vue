@@ -1,7 +1,7 @@
 <template>
   <div style ="display:flex; height:calc(100% - 50px)">
+   <el-button @click="mainClick" style="position:absolute;display:none">Test</el-button>
     <div id="map" class="map">
-      <el-button @click="mainClick"> watch button</el-button>
     </div>
   </div>
 </template>
@@ -9,6 +9,9 @@
 import axios from "axios"
 import service from '@/service/fooService.js'
 export default{
+  mounted(){
+    this.initMap();
+  },
   methods:{
     mainClick1(){
       return new Promise((resolve, reject) => {
@@ -29,6 +32,22 @@ export default{
        alert(res.data)
       })
     },
+    initMap(){
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([103.73,36.03]),
+          zoom: 8,
+          minZoom:5,
+          maxZoom:12
+        })
+      });
+    }
   }
 }
 // import service from '@/service/fooService.js'
@@ -73,22 +92,6 @@ export default{
 //           }
 //         },4000)
 //     },
-//     initMap:function(){
-//       var map = new ol.Map({
-//         target: 'map',
-//         layers: [
-//           new ol.layer.Tile({
-//             source: new ol.source.OSM()
-//           })
-//         ],
-//         view: new ol.View({
-//           center: ol.proj.fromLonLat([103.73,36.03]),
-//           zoom: 8,
-//           minZoom:5,
-//           maxZoom:12
-//         })
-//       });
-//     }
 //   }
 // }
 </script>

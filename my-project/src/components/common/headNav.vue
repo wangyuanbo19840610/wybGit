@@ -1,6 +1,8 @@
 <template>
   <el-row type="flex">
-    <el-col :span="4">logo</el-col>
+    <el-col :span="4" style="background:black">
+      <span><img style="width:40px;height:40px;" src="../../assets/logo.png" /></span>
+    </el-col>
     <el-col :span="20">
     <el-header style="text-align: right; font-size: 12px">
       <el-dropdown>

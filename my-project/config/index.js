@@ -10,7 +10,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api/test001': {
+      '/api/test005': {
         target: 'http://127.0.0.1:5000',  //目标接口域名
         changeOrigin: true,  //是否跨域
         pathRewrite: {
