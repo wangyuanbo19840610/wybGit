@@ -17,18 +17,19 @@ export default {
     },
     base:function(type, url, params){
         return new Promise((resolve, reject)=>{
-            this.apiAxios(type, url, params).then(response => {
-                if(response.data && response.data.code==200){
-                    resolve(response.data);
-                    return;
+            return this.apiAxios(type, url, params).then(response => {
+                if(response.data && response.status==200){
+                    resolve(response);
                 }
-                if(response.data && response.data.code==500){
+                if(response.data && response.status==500){
                     console.log("xxxx")
                 }
             }).catch(err=>{
                 reject(err);
-                return;
             })
+        }).then((value)=>{
+             console.log("value",value)
+             return value
         })
     }
 }
