@@ -1,8 +1,8 @@
 import http from '@/util/http.js'
-let baseUrl = '/api/test005'
+let baseUrl = '/api/'
 export default{
-    getInfo(url){
-        let sendUrl = baseUrl;
-        return http.get(sendUrl)
+    getInfo(param){
+        let url = baseUrl + 'test001';
+        return http.get(url)
     }
 }

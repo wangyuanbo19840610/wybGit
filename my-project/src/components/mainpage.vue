@@ -1,6 +1,6 @@
 <template>
   <div style ="display:flex; height:calc(100% - 50px)">
-   <el-button @click="mainClick" style="position:absolute;display:none">Test</el-button>
+   <el-button @click="mainClick">Test</el-button>
     <div id="map" class="map">
     </div>
   </div>
@@ -27,7 +27,7 @@ export default{
       })
     },
     mainClick(){
-      service.getInfo('url').then(res =>{
+      service.getInfo().then(res =>{
        console.log("mainClick",res)
        alert(res.data)
       })
