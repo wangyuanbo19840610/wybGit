@@ -5,9 +5,9 @@ from restapi.service.test import HelloWorld, Test20191018, TestRedisWrite, TestR
 api_bp = Blueprint("request", __name__)
 api = Api(api_bp)
 
-api.add_resource(HelloWorld, "/test001")
-api.add_resource(Test20191018, "/test002")
-api.add_resource(TestRedisWrite, "/test003")
-api.add_resource(TestRedisRead, "/test004")
-api.add_resource(TestRedisReadOne, "/test005")
+api.add_resource(HelloWorld, "/api/test001")
+api.add_resource(Test20191018, "/api/test002")
+api.add_resource(TestRedisWrite, "/api/test003")
+api.add_resource(TestRedisRead, "/api/test004")
+api.add_resource(TestRedisReadOne, "/api/test005")
 

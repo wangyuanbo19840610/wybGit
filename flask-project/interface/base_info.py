@@ -5,7 +5,7 @@ class BaseInfo(object):
 
     @classmethod
     def get_info(cls):
-        return "hello world"
+        return "111111111111111111111"
 
     def get_base_info(self):
         data = self.name

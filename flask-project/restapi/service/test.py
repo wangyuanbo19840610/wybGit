@@ -33,7 +33,7 @@ class TestRedisRead(Resource):
 
 class TestRedisReadOne(Resource):
     def get(self):
-        data = Redis.read("test_key3333")
+        data = Redis.read("test_key2222")
         return data
 
 
