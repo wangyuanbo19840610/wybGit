@@ -1,6 +1,6 @@
 <template>
   <div class="left-nav">
-    <el-col class="wangyuanbo">
+  <el-col class="wangyuanbo">
       <el-menu :collapse = "collapse" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" 
       background-color="#545c64" text-color="#fff" router active-text-color="#ffd04b" @select="handleSelect">
         <div class="menuheader" @click="menuheaderClick">
@@ -9,7 +9,7 @@
         <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-location"></i>
-              <span slot="title">王翔宇</span>
+              <span slot="title">Main</span>
             </template>
             <el-menu-item v-for="(item,value) in MenuArray" :key="item.name" :index="item.path">
                 <i class="item.icon"></i>

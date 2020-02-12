@@ -10,7 +10,8 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 import echarts from 'echarts'
-import util from './util/util.js'
+import util from './utils/util.js'
+import './utils/directive.js'
 Vue.use(Element)
 Vue.use(Vuex)
 Vue.config.productionTip = false
