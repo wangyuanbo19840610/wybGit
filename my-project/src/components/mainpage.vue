@@ -1,7 +1,7 @@
 <template>
   <div style ="display:flex; height:calc(100% - 50px)">
    <!--<p v-my-directive="msg"></p>!-->
-   <el-button @click="mainClick">Test</el-button>
+   <!--el-button @click="mainClick">Test</el-button !-->
     <div id="map" class="map">
     </div>
   </div>
@@ -9,6 +9,7 @@
 <script>
 import axios from "axios"
 import service from '@/service/fooService.js'
+import wgis from '../utils/Wgis.js'
 export default{
   data(){
     return{
@@ -16,8 +17,9 @@ export default{
     }
   },
   mounted(){
-    this.initMap();
+    wgis.initMap();
     this.testObj();
+    console.log("wgis",wgis.a)
   },
   methods:{
     testObj(){
@@ -61,41 +63,6 @@ export default{
        alert(res.data)
       })
     },
-    initMap(){
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM(),
-            visible: true
-          }),
-          new ol.layer.Tile({
-            source:new ol.source.TileWMS({
-              url:'http://localhost:8080/geoserver/topp/wms',//'https://ahocevar.com/geoserver/wms',
-              params:{
-                'LAYERS':'topp:tasmania_roads',
-              },
-              serverType:'geoserver',
-              transition:5000
-            })
-          })
-        ],
-        view: new ol.View({
-          center:ol.proj.fromLonLat([147.59583, -42.04926]),//[-70.96065,40.78431], ,//ol.proj.fromLonLat([103.73,36.03]),
-          zoom: 8,
-          // minZoom:5,
-          // maxZoom:12
-        }),
-        // 新增代码
-        controls: ol.control.defaults().extend([    // 往地图增加滑块缩放控件
-            new ol.control.ZoomSlider(),
-            new ol.control.OverviewMap({        // 实例化一个OverviewMap类的对象，并加入到地图中
-                collapsed: false
-            }),
-            new ol.control.ScaleLine() 
-        ]),
-      });
-    }
   }
 }
 // import service from '@/service/fooService.js'
