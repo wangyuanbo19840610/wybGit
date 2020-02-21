@@ -35,8 +35,7 @@ export default{
       collapse:false,
       MenuArray:[
         {icon:"el-icon-document",path:"mainpage",name:"地图"},
-        {icon:"el-icon-document",path:"1111",name:"拼音"},
-        {icon:"el-icon-setting",path:"2222",name:"算术"}
+        {icon:"el-icon-document",path:"picture",name:"相册"},
       ]
       // MenuArray = [
       //   {

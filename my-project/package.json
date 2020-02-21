@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "npm run dev",``
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
@@ -17,7 +17,7 @@
     "axios": "^0.18.0",
     "echarts": "^4.2.1",
     "element": "^0.1.4",
-    "element-ui": "^2.4.11",
+    "element-ui": "^2.13.0",
     "es6-promise": "^4.2.5",
     "less-loader": "^5.0.0",
     "popper.js": "^1.14.6",
