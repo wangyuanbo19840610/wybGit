@@ -17,6 +17,7 @@ export default{
     }
   },
   mounted(){
+    console.log("xxxxxxxxxxxxxxxxxxxxxxx",$.ajax({url:"http://www.baidu.com.cn",async:false}))
     wgis.initMap();
     this.testObj();
     console.log("wgis",wgis.a)
