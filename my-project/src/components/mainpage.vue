@@ -1,7 +1,7 @@
 <template>
   <div style ="display:flex; height:calc(100% - 50px)">
    <!--<p v-my-directive="msg"></p>!-->
-   <!--el-button @click="mainClick">Test</el-button !-->
+   <el-button @click="mainClick">Test</el-button>
     <div id="map" class="map">
     </div>
   </div>
@@ -61,7 +61,6 @@ export default{
     mainClick(){
       service.getInfo().then(res =>{
        console.log("mainClick",res)
-       alert(res.data)
       })
     },
   }

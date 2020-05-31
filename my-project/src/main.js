@@ -12,6 +12,7 @@ import axios from 'axios'
 import echarts from 'echarts'
 import util from './utils/util.js'
 import './utils/directive.js'
+import './mock/mockServer'
 Vue.use(Element)
 Vue.use(Vuex)
 Vue.config.productionTip = false
