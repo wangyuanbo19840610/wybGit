@@ -36,6 +36,7 @@ export default{
       MenuArray:[
         {icon:"el-icon-document",path:"mainpage",name:"地图"},
         {icon:"el-icon-document",path:"picture",name:"相册"},
+        {icon:"el-icon-document",path:"test",name:"test"},
       ]
       // MenuArray = [
       //   {

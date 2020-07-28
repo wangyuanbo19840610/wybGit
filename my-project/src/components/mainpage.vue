@@ -1,10 +1,6 @@
 <template>
-  <div style ="display:flex; height:calc(100% - 50px)">
-   <!--<p v-my-directive="msg"></p>!-->
-   <el-button @click="mainClick">Test</el-button>
-    <div id="map" class="map">
-    </div>
-  </div>
+  <div id="myChart" :style=" {width: '300px', height: '300px'}"></div>
+  
 </template>
 <script>
 import axios from "axios"
@@ -17,12 +13,34 @@ export default{
     }
   },
   mounted(){
-    console.log("xxxxxxxxxxxxxxxxxxxxxxx",$.ajax({url:"http://www.baidu.com.cn",async:false}))
-    wgis.initMap();
-    this.testObj();
-    console.log("wgis",wgis.a)
+    this.drawLine();
+    // let zz="100px";
+    // $('#aaa').css({"background-color":"yellow","max-height":`calc(100vh - ${zz}`})
+    // console.log("xxxxxxxxxxxxxxxxxxxxxxx",$.ajax({url:"http://www.baidu.com.cn",async:false}))
+    // wgis.initMap();
+    // this.testObj();
+    // console.log("wgis",wgis.a)
   },
   methods:{
+      drawLine(){
+        console.log("111")
+        // 基于准备好的dom，初始化echarts实例
+        let myChart = this.$echarts.init(document.getElementById('myChart'))
+        // 绘制图表
+        myChart.setOption({
+            title: { text: '在Vue中使用echarts' },
+            tooltip: {},
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        });
+    },
     testObj(){
       let testObj={"test1":[{"obj1":"111"},{"obj1_1":"111_1"}], 
                     "test2":[{"obj1":"111"},{"obj1_1":"111_1"}],

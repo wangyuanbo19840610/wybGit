@@ -2,7 +2,8 @@
   <div id="app" class='app'>
     <leftNav></leftNav>
     <headNav></headNav>
-    <router-view/>
+    <div class="router"><router-view/></div>
+   
   </div>
 </template>
 
@@ -24,3 +25,10 @@ for(var i=0;i<localStorage.length;i++){
   console.log("test_11",localStorage.key(i) + ":" + localStorage.getItem(localStorage.key(i)))
 }
 </script>
+<style>
+.router{
+        height:calc(100% - 50px);
+position:relative;
+margin-left:200px;
+}
+</style>

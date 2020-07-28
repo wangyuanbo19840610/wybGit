@@ -19,10 +19,6 @@
 </template>
 <script>
   export default {
-    mounted() {
-      console.log("tttttttttt",this.defalutKeys)
- this.$refs.tree.store.defaultExpandAll = true
-    },
     data() {
       return {
         defaultEx:true,
@@ -85,9 +81,8 @@
           //     //this.$refs.tree.store.nodesMap[data.$treeNodeId].expanded = true
           //   }
           this.$nextTick(() => {
-this.defaultEx = false;
-          
-      })
+            this.defaultEx = false;
+          })
 
         //}, 5000) 
 
