@@ -33,6 +33,7 @@ export default {
         console.log("dragTStart",ev)
     },
     dragStart(ev){
+        this.innerDragFlag = false;
        // ev.preventDefault();
         ev.dataTransfer.setData("Text", ev.target.id);
         console.log("dragStart",ev)
