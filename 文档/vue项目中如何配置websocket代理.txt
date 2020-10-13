@@ -1,0 +1,21 @@
+1 在项目的config/index.js文件中的dev参数下增加代理配置：
+dev: {
+   proxyTable: {
+      '/socket': {
+        target: 'ws://localhost:8000',//后端目标接口地址
+        changeOrigin: true,//是否允许跨域
+        pathRewrite: {
+          '^/socket': '',//重写,
+        },
+        ws: true //开启ws, 如果是http代理此处可以不用设置
+      }
+    },
+ 
+ 。。。
+}
+2 在vue的初始化websocket连接处的uri写法：
+
+此处的uri的写法 'ws://' + location.host + '/socket/websocket/' + id 。
+//此处因已将websocket添加到vue中所以通过this.$connect()方法创建websocket连接
+this.$connect('ws://' + location.host + '/socket/websocket/' + id + '/' + cn, { format: 'json' })
+

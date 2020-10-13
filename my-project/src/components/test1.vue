@@ -1,33 +1,62 @@
 <template>
-<div class="test1">
+<div class="test1" id="test1">
     <div class="left">
         <div>工具栏</div>
-        <div class = "span">
-            <div class="spanItem"  id="div1" draggable="true" @dragstart="dragStart($event)">1</div>
-            <div class="spanItem"  id="div2" draggable="true" @dragstart="dragStart($event)">2</div>
-            <div class="spanItem"  id="div3" draggable="true" @dragstart="dragStart($event)">3</div>
-            <div class="spanItem"  id="div4" draggable="true" @dragstart="dragStart($event)">4</div>
+        <div class="spanItem" id="div1" draggable="true" @dragstart="dragStart($event)">
+            <VueDragResize @clicked='clicked($event)' :x='size' :y='size' :w='size' :h='size' @resizing='resizing($event)' :isDraggable='isDraggable' :isResizable='isResizable' :parentLimitation='parentLimitation'>
+               <div id="divEnd">1111</div>
+            </VueDragResize>
         </div>
+        
     </div>
-    <div class="right" id = "div5"  @dragstart="dragTStart($event)" @dragover="dragover($event)" @drop="drop($event)">right</div>
+    <div class="right" id = "div5" @dragenter="dragenter($event)" @dragover="dragover($event)" @drop="drop($event)">right</div>
 </div>
 </template>
 <script>
+import VueDragResize from 'vue-drag-resize'
 export default {
   name: 'DndList',
+  components:{
+    VueDragResize
+  },
   watch: {
   },
   data () {
     return {
-        innerDragFlag:false
+        isDraggable:false,
+        isResizable:false,
+        size:50,
+        parentLimitation:false,
+        isActive:true,
+        innerDragFlag:false,
+        params:{
+            left: Number, //the X position of the component
+            top: Number, //the Y position of the component
+            width: Number, //the width of the component
+            height: Number //the height of the component
+        }
+
     }
   },
   mounted(){
       //this.drawLine()
+      console.log("xx",$('#test1').offset())
   },
   computed: {
   },
   methods: {
+      clicked(ev){
+          console.log("clicked",ev)
+      },
+      resizing(ev){
+          console.log("resizing",ev)
+      },
+    dragging(a){
+        console.log(a)
+    },
+    dragenter(ev){
+        console.log("dragenter",ev)
+    },
     dragTStart(ev){
         this.innerDragFlag = true;
         console.log("dragTStart",ev)
@@ -89,18 +118,17 @@ export default {
         width:20%;
         height:100%;
         background:red;
-        .span{
-            width:100%;
-            display:inline-flex;
+
             .spanItem{
                 width:25px;
+                height:25px;
                 border:1px solid black;
             }
             .myChart{
                 width:25px;
                 height:25px;
             }
-        }
+        
 
     }
     .right{
